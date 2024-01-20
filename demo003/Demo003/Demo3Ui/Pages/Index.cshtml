@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Genova!</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Summary</th>
+            <th>TemperatureC</th>
+            <th>TemperatureF</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var w in Model.WeatherForecasts)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => w.Date)</td>
+                <td>@Html.DisplayFor(modelItem => w.Summary)</td>
+                <td>@Html.DisplayFor(modelItem => w.TemperatureC)</td>
+                <td>@Html.DisplayFor(modelItem => w.TemperatureF)</td>
+            </tr>
+        }
+    </tbody>
+</table>
